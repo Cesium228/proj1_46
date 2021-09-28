@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+ul {
+    margin-top: 30px;
+    list-style: none;
+    display: flex;
+}
+
+a {
+
+ padding: 16px;
+ /* background: #41aedc;
+ color: #ffffff; */
+ text-decoration: none;
+ transition: .3s;
+}
+/* a:hover {
+    background: #fd9c10;
+} */
+
+
+    </style>
+
+
+</head>
+<body>
+
+
+
+<h1>Создать меню</h1>    
+
+<form name="formMenu">
+
+<p>
+<label>Пункты меню
+<input type="text" name="elemMenu" size="50" value="Главная, О компании, Новости">
+</label>
+</p>
+<p>
+<label>Цвет текста:
+    <input type="color" value="#ffffff" name="fColor">
+</label>
+</p>
+
+<p>
+    <label>Цвет фона:
+        <input type="color" value="#41aedc" name="bColor">
+    </label>
+    </p>
+
+    <p>
+        <label>Цвет hover:
+            <input type="color" value="#fd9c10" name="hColor">
+        </label>
+        </p>
+<p><input type="button" value="Создать меню" onclick="menu()"></p>
+
+<style id="myStyle"></style>
+
+<div id="myMenu">
+
+<!-- <ul>
+<li><a href="#">Главная</a></li>
+<li><a href="#">Главная</a></li>
+<li><a href="#">Главная</a></li>
+</ul> -->
+</div>
+<div id="myPic"></div>
+
+
+
+<script>
+
+
+function menu() {
+
+let elemMenu = formMenu.elemMenu.value;
+let arrMenu = elemMenu.split(", ");
+console.log(arrMenu);
+
+
+let fColor = formMenu.fColor.value;
+let bColor = formMenu.bColor.value;
+let hColor = formMenu.hColor.value;
+
+/* console.log(elemMenu);
+console.log(fColor);
+console.log(bColor);
+console.log(hColor); */
+let s = "", s1 = "";
+
+for (i=0; i<arrMenu.length; i++) {
+    s += `<li onclick="pic(${i+1})"><a href="#">${arrMenu[i]}</a></li>`;
+}
+
+s = `<ul>${s}</ul>`;
+
+s1 = `
+a {
+    background: ${bColor};
+    color: ${fColor};
+}
+
+a:hover {
+    background: ${hColor};
+}
+`;
+myStyle.innerHTML = s1;
+myMenu.innerHTML = s;
+
+}
+
+function pic(p) {
+    myPic.innerHtml = `
+    <img src="images/${p}.jpg">;
+
+    `;
+}
+
+
+
+</script>
+
+
+
+</form>
+
+
+
+    
+</body>
+</html>
