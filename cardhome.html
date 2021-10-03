@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="product-item">
+        <img src="images for card/image1.jpg">
+        <div class="product-list">
+          <h3>Тайная жизнь домашних животных 2</h3>
+
+          <div class="rating-area">
+            <input type="radio" id="star-1" name="rating" value="1">
+            <label for="star-1" title="Оценка «1»"></label>	
+            <input type="radio" id="star-2" name="rating" value="2">
+            <label for="star-2" title="Оценка «2»"></label>    
+            <input type="radio" id="star-3" name="rating" value="3">
+            <label for="star-3" title="Оценка «3»"></label>  
+            <input type="radio" id="star-4" name="rating" value="4">
+            <label for="star-4" title="Оценка «4»"></label>    
+            <input type="radio" id="star-5" name="rating" value="5">
+            <label for="star-5" title="Оценка «5»"></label>
+        </div>
+
+
+
+
+
+      
+            <span class="price">45 рублей <strike>50 рублей</strike>
+            </span>
+            <a href="" class="button">Купить</a>
+        </div>
+      </div>
+      <style>
+     
+       {
+        
+        box-sizing: border-box;
+     }
+     .product-item {
+        width: 500px;
+        text-align: center;
+        margin: 0 auto;
+        border-bottom: 2px solid #F5F5F5;
+        background: white;
+        font-family: "Open Sans";
+        transition: .3s ease-in;
+     }
+     .product-item:hover {
+        border-bottom: 2px solid #fc5a5a;
+     }
+     .product-item img {
+        display: block;
+        width: 100%;
+     }
+     .product-list {
+        background: #fafafa;
+        padding: 15px 0;
+     }
+     .product-list h3 {
+        font-size: 18px;
+        font-weight: 400;
+        color: #444444;
+        margin: 0 0 10px 0;
+     }
+     .price {
+        font-size: 16px;
+        color: #fc5a5a;
+        display: block;
+        margin-bottom: 12px;
+     }
+     .rating-area {
+	overflow: hidden;
+	width: 265px;
+	margin: 0 auto;
+}
+.rating-area:not(:checked) > input {
+	display: none;
+}
+.rating-area:not(:checked) > label {
+	float: center;
+	width: 42px;
+	padding: 0;
+	cursor: pointer;
+	font-size: 32px;
+	line-height: 32px;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+    
+}
+
+.rating-area:not(:checked) > label:before {
+	content: '★';
+}
+.rating-area > input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px #c60;
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+	color: gold;
+}
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px goldenrod;
+}
+.rate-area > label:active {
+	position: relative;
+}
+     .button {
+        text-decoration: none;
+        display: inline-block;
+        padding: 0 12px;
+        background: #cccccc;
+        color: orange;
+        text-transform: uppercase;
+        font-size: 12px;
+        line-height: 28px;
+        transition: .3s ease-in;
+     }
+     .product-item:hover .button {
+        background: #fc5a5a;
+     }
+
+    </style>
+    
+    
+</body>
+</html>
